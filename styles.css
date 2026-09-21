@@ -3463,28 +3463,42 @@ footer p {
     font-weight: 700;
 }
 
-/* Modal Controls */
+/* Modal Controls inside Top Section */
 .full-menu-modal-top-section .menu-control-bar {
     max-width: 950px;
     margin: 0 auto;
-    padding: 8px 20px 4px;
+    padding: 8px 20px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
 }
 
-.full-menu-modal-top-section .menu-category-tabs {
-    margin-bottom: 0 !important;
-    padding-bottom: 2px !important;
+.full-menu-modal-top-section .menu-filter-dropdown-wrapper {
+    margin: 0 !important;
+    flex-shrink: 0;
+}
+
+.full-menu-modal-top-section .menu-filter-dropdown-menu {
+    left: 0;
+    transform: translateX(0) translateY(-10px) scale(0.96);
+}
+
+.full-menu-modal-top-section .menu-filter-dropdown-wrapper.open .menu-filter-dropdown-menu {
+    transform: translateX(0) translateY(0) scale(1);
 }
 
 .full-menu-modal-top-section .search-box-wrapper {
     position: relative;
-    margin-bottom: 14px;
+    margin-bottom: 0 !important;
+    flex: 1;
+    min-width: 0;
 }
-
 .full-menu-modal-top-section .search-box-wrapper input {
     width: 100%;
     background: var(--bg-card, rgba(24, 24, 24, 0.96));
     border: 1.5px solid var(--glass-border, rgba(201, 162, 75, 0.35));
-    padding: 12px 20px 12px 48px;
+    padding: 12px 42px 12px 48px;
     border-radius: 30px;
     color: var(--text-primary, #ffffff);
     font-size: 0.98rem;
@@ -3504,13 +3518,56 @@ footer p {
     background: var(--bg-card);
 }
 
-.full-menu-modal-top-section .search-box-wrapper i {
+.full-menu-modal-top-section .search-box-wrapper > i.fa-search,
+.full-menu-modal-top-section .search-box-wrapper > i.search-icon {
     position: absolute;
     left: 18px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--accent-gold);
     font-size: 1.1rem;
+    pointer-events: none;
+}
+
+.full-menu-modal-top-section .search-box-wrapper .search-clear-btn {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(201, 162, 75, 0.3);
+    color: var(--accent-gold, #c9a24b);
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.25s ease;
+    z-index: 3;
+}
+
+.full-menu-modal-top-section .search-box-wrapper .search-clear-btn.visible {
+    display: flex;
+}
+
+.full-menu-modal-top-section .search-box-wrapper .search-clear-btn:hover {
+    background: var(--accent-gold, #c9a24b);
+    color: #000000;
+    border-color: var(--accent-gold, #c9a24b);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 10px rgba(201, 162, 75, 0.4);
+}
+
+.full-menu-modal-top-section .search-box-wrapper .search-clear-btn i {
+    position: static;
+    transform: none;
+    font-size: 0.78rem;
+    color: inherit;
+    pointer-events: none;
+    line-height: 1;
 }
 
 /* Compact Grid inside Modal */
@@ -3587,7 +3644,38 @@ footer p {
         margin-top: 4px;
     }
     .full-menu-modal-top-section .menu-control-bar {
-        padding: 6px 12px 2px;
+        padding: 6px 12px 8px;
+        gap: 8px;
+    }
+    .full-menu-modal-top-section .menu-filter-dots-btn {
+        padding: 6px 11px 6px 8px;
+        font-size: 0.8rem;
+        gap: 6px;
+    }
+    .full-menu-modal-top-section .menu-filter-dots-btn .three-dots-icon-box {
+        width: 22px;
+        height: 22px;
+        font-size: 0.75rem;
+    }
+    .full-menu-modal-top-section .search-box-wrapper {
+        margin-bottom: 0 !important;
+    }
+    .full-menu-modal-top-section .search-box-wrapper input {
+        padding: 8px 32px 8px 34px;
+        font-size: 0.84rem;
+    }
+    .full-menu-modal-top-section .search-box-wrapper > i.fa-search,
+    .full-menu-modal-top-section .search-box-wrapper > i.search-icon {
+        left: 11px;
+        font-size: 0.85rem;
+    }
+    .full-menu-modal-top-section .search-box-wrapper .search-clear-btn {
+        right: 8px;
+        width: 22px;
+        height: 22px;
+    }
+    .full-menu-modal-top-section .search-box-wrapper .search-clear-btn i {
+        font-size: 0.68rem;
     }
     .full-menu-modal-top-section .menu-category-tabs {
         margin-bottom: 0 !important;
